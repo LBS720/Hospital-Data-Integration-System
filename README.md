@@ -30,3 +30,6 @@ docker exec -it hospital-postgres psql -U admin -d hospital_db
 
 # To see the indexes 
 \di
+
+# To see the SP - get_patients_without_recent_lab_tests
+\df+ get_patients_without_recent_lab_tests
