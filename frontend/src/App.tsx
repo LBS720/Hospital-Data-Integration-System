@@ -2,6 +2,8 @@
 
 import Sidebar from "./components/Sidebar";
 import { createUseStyles } from "react-jss";
+import { theme } from "./theme";
+import { BrowserRouter } from "react-router-dom";
 
 const useStyles = createUseStyles({
   app: {
@@ -15,7 +17,7 @@ const useStyles = createUseStyles({
   },
   main: {
     flex: 1,
-    background: "#f4f6fa",
+    background: theme.mainBg,
     padding: 32,
   },
 });
@@ -23,10 +25,12 @@ const useStyles = createUseStyles({
 function App() {
   const classes = useStyles();
   return (
-    <div className={classes.app}>
-      <Sidebar />
-      <div className={classes.main}></div>
-    </div>
+    <BrowserRouter>
+      <div className={classes.app}>
+        <Sidebar />
+        <div className={classes.main}></div>
+      </div>
+    </BrowserRouter>
   );
 }
 

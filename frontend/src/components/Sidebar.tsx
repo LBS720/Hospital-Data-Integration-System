@@ -13,6 +13,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { SidebarOption } from "../constants/SidebarOptions";
 import { observer } from "mobx-react-lite";
 import sidebarStore from "../store/sidebarStore";
+import { Link } from "react-router-dom";
 
 const useStyles = createUseStyles({
   sidebar: {
@@ -122,16 +123,16 @@ const Sidebar: React.FC = observer(() => {
       <ul className={classes.menu}>
         {sidebarLinks.map((item) => (
           <li className={classes.menuItem} key={item.href}>
-            <a
+            <Link
               className={classes.link}
-              href={item.href}
+              to={item.href}
               onClick={() =>
                 sidebarStore.setSelected(item.label as SidebarOption)
               }
             >
               <span className={classes.icon}>{item.icon}</span>
               {!collapsed && item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
