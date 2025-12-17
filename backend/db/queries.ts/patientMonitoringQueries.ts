@@ -1,6 +1,6 @@
 /** @format */
 
-import { pool } from "./dbConnector";
+import { pool } from "../dbConnector";
 
 export async function getPatientsWithoutRecentLabTests() {
   const result = await pool.query(
