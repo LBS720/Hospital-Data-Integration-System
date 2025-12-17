@@ -1,16 +1,22 @@
+<!-- @format -->
+
 # Hospital-Data-Integration-System
 
-data: 
+data:
+
 # Description
-This repository contains the database schema and sample data for the Hospital Data Integration System. 
+
+This repository contains the database schema and sample data for the Hospital Data Integration System.
 It includes tables for patients, admissions, lab tests, and lab results.
 
 # Prerequisites that you need:
+
 - Docker
 - Docker Compose (optional)
 - PostgreSQL client (psql)
 
 Run PostgreSQL in Docker:
+
 ```bash
 docker run --name hospital-postgres \
   -e POSTGRES_USER=admin \
@@ -21,15 +27,25 @@ docker run --name hospital-postgres \
 ```
 
 # To open an interactive PostgreSQL session inside the Docker container:
+
 ```bash
 docker exec -it hospital-postgres psql -U admin -d hospital_db
 ```
 
-# To see the tables: 
-\dt
+# To see the tables:
 
-# To see the indexes 
+```bash
+\dt
+```
+
+# To see the indexes
+
+```bash
 \di
+```
 
 # To see the SP - get_patients_without_recent_lab_tests
+
+```bash
 \df+ get_patients_without_recent_lab_tests
+```

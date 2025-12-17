@@ -1,7 +1,7 @@
 /** @format */
 
 import { Router } from "express";
-import { getPatientsWithoutRecentLabTests } from "../db/patientMonitoringQueries";
+import { getPatientsWithoutRecentLabTests } from "../db/queries.ts/patientMonitoringQueries";
 
 const router = Router();
 
