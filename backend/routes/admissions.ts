@@ -1,14 +1,14 @@
 /** @format */
 
 import { Router } from "express";
-import { pool } from "../db/dbConnector";
+import { getAllAdmissions } from "../db/queries.ts/admissionsQueries";
 
 const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM admissions");
-    res.json(result.rows);
+    const admissions = await getAllAdmissions();
+    res.json(admissions);
   } catch (err) {
     console.error(err);
     res.status(500).send("Server Error");

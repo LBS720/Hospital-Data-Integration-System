@@ -1,13 +1,13 @@
 /** @format */
 
 import { Router } from "express";
-import { getAllPatients } from "../db/queries.ts/patientsQueries";
+import { getPatientsWithoutRecentLabTests } from "../db/patientMonitoringQueries";
 
 const router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/patients-without-recent-lab-tests", async (req, res) => {
   try {
-    const patients = await getAllPatients();
+    const patients = await getPatientsWithoutRecentLabTests();
     res.json(patients);
   } catch (err) {
     console.error(err);

@@ -7,6 +7,7 @@ import patientsRoutes from "./routes/patients";
 import admissionsRoutes from "./routes/admissions";
 import labTestsRoutes from "./routes/labTests";
 import labResultsRoutes from "./routes/labResults";
+import patientMonitoringRoutes from "./routes/patientMonitoring";
 
 dotenv.config();
 const app = express();
@@ -16,9 +17,10 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/patients", patientsRoutes);
-app.use("/admissions", admissionsRoutes);
 app.use("/lab_tests", labTestsRoutes);
+app.use("/admissions", admissionsRoutes);
 app.use("/lab_results", labResultsRoutes);
+app.use("/monitoring", patientMonitoringRoutes);
 
 app.get("/", (req, res) => res.send("Backend is running!"));
 
