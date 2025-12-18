@@ -1,7 +1,7 @@
 /** @format */
 
 import { makeAutoObservable } from "mobx";
-import { Patient } from "../models/patients";
+import { Patient } from "../models/patient";
 
 class PatientsStore {
   patients: Patient[] = [];
