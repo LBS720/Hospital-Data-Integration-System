@@ -14,7 +14,7 @@ export const columnsMap = {
     { header: "Allergies", accessor: "allergies" },
   ],
   [SidebarOption.Admissions]: [
-    { header: "Case #", accessor: "hospitalizationCaseNumber" },
+    { header: "Case Number", accessor: "hospitalizationCaseNumber" },
     { header: "Patient ID", accessor: "patientId" },
     { header: "Admission Date", accessor: "admissionDate" },
     { header: "Admission Time", accessor: "admissionTime" },
@@ -44,7 +44,7 @@ export const columnsMap = {
   ],
   [SidebarOption.Monitoring]: [
     { header: "Patient ID", accessor: "patientId" },
-    { header: "Case #", accessor: "hospitalizationCaseNumber" },
+    { header: "Case Number", accessor: "hospitalizationCaseNumber" },
     { header: "Admission Date", accessor: "admissionDate" },
     { header: "Admission Time", accessor: "admissionTime" },
     { header: "Department", accessor: "department" },

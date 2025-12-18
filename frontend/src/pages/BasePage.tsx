@@ -40,6 +40,9 @@ const useStyles = createUseStyles({
     boxShadow: "0 2px 12px rgba(0,0,0,0.07)",
     padding: 24,
     marginTop: 32,
+    overflowX: "auto",
+    overflowY: "auto",
+    maxHeight: "70vh",
   },
 });
 
@@ -54,7 +57,6 @@ const BasePage: React.FC = observer(() => {
   const columns = columnsMap[selected];
   const data = dataMap[selected];
   const isLoading = loadingMap[selected];
-  console.log(data);
 
   return (
     <div className={classes.app}>
