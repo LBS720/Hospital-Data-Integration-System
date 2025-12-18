@@ -10,6 +10,8 @@ export function mapDbPatientMonitoringToPatientMonitoring(
 ): PatientMonitoring {
   return {
     patientId: dbPatientMonitoring.patient_id,
+    firstName: dbPatientMonitoring.first_name,
+    lastName: dbPatientMonitoring.last_name,
     hospitalizationCaseNumber: dbPatientMonitoring.hospitalization_case_number,
     admissionDate: dbPatientMonitoring.admission_date,
     admissionTime: dbPatientMonitoring.admission_time,
