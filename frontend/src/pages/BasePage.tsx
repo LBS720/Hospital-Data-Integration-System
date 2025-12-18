@@ -9,7 +9,8 @@ import { GenericTable } from "../components/GenericTable";
 import Loader from "../components/Loader";
 import { SidebarOption } from "../constants/SidebarOptions";
 import { columnsMap } from "../constants/TableColumns";
-import { sidebarStore } from "../store";
+import { sidebarStore, patientsMonitoringStore } from "../store";
+import UpdateStatus from "../components/UpdateStatus";
 import { dataMap } from "../constants/TableDataMap";
 import { loadingMap } from "../constants/TableLoadingMap";
 import { fetchMap } from "../constants/TableFetchMap";
@@ -52,6 +53,14 @@ const BasePage: React.FC = observer(() => {
 
   useEffect(() => {
     fetchMap[selected]();
+    if (selected === SidebarOption.Monitoring) {
+      patientsMonitoringStore.startPolling();
+      return () => {
+        patientsMonitoringStore.stopPolling();
+      };
+    } else {
+      patientsMonitoringStore.stopPolling();
+    }
   }, [selected]);
 
   const columns = columnsMap[selected];
@@ -63,6 +72,7 @@ const BasePage: React.FC = observer(() => {
       <Sidebar />
       <main className={classes.main}>
         <div className={classes.tableContainer}>
+          {selected === SidebarOption.Monitoring && <UpdateStatus />}
           {isLoading ? (
             <Loader />
           ) : (
