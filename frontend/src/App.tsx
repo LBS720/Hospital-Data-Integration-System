@@ -1,9 +1,9 @@
 /** @format */
 
-import Sidebar from "./components/Sidebar";
 import { createUseStyles } from "react-jss";
 import { theme } from "./theme";
 import { BrowserRouter } from "react-router-dom";
+import BasePage from "./pages/BasePage";
 
 const useStyles = createUseStyles({
   app: {
@@ -27,7 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className={classes.app}>
-        <Sidebar />
+        <BasePage />
         <div className={classes.main}></div>
       </div>
     </BrowserRouter>

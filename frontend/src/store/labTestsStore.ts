@@ -28,7 +28,9 @@ class LabTestsStore {
     this.setLoading(true);
     this.setError(null);
     try {
-      const response = await fetch("/api/labTests");
+      const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/lab-tests`
+      );
       if (!response.ok) throw new Error("Failed to fetch lab tests");
       const data = await response.json();
       this.setLabTests(data);

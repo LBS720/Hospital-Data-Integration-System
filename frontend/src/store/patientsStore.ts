@@ -28,7 +28,9 @@ class PatientsStore {
     this.setLoading(true);
     this.setError(null);
     try {
-      const response = await fetch("/api/patients");
+      const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/patients`
+      );
       if (!response.ok) throw new Error("Failed to fetch patients");
       const data = await response.json();
       this.setPatients(data);

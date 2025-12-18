@@ -29,7 +29,7 @@ class PatientsMonitoringStore {
     this.setError(null);
     try {
       const response = await fetch(
-        "/api/patientMonitoring/patients-without-recent-lab-tests"
+        `${process.env.REACT_APP_API_BASE_URL}/monitoring/patients-without-recent-lab-tests`
       );
       if (!response.ok)
         throw new Error("Failed to fetch patient monitoring data");

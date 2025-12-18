@@ -28,7 +28,9 @@ class AdmissionsStore {
     this.setLoading(true);
     this.setError(null);
     try {
-      const response = await fetch("/api/admissions");
+      const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/admissions`
+      );
       if (!response.ok) throw new Error("Failed to fetch admissions");
       const data = await response.json();
       this.setAdmissions(data);

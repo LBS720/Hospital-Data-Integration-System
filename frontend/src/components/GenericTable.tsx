@@ -1,18 +1,13 @@
 /** @format */
 
-import React from "react";
 import { theme } from "../theme";
-import { TableColumn } from "../types/Table";
 
-type GenericTableProps<T> = {
-  columns: TableColumn<T>[];
-  data: T[];
+type GenericTableProps = {
+  columns: { header: string; accessor: string }[];
+  data: any[];
 };
 
-export function GenericTable<T extends object>({
-  columns,
-  data,
-}: GenericTableProps<T>) {
+export function GenericTable({ columns, data }: GenericTableProps) {
   return (
     <table
       style={{
@@ -25,7 +20,7 @@ export function GenericTable<T extends object>({
         <tr>
           {columns.map((col) => (
             <th
-              key={String(col.accessor)}
+              key={col.accessor}
               style={{
                 border: `1px solid ${theme.tableBorder}`,
                 padding: "8px",
@@ -38,13 +33,12 @@ export function GenericTable<T extends object>({
           ))}
         </tr>
       </thead>
-
       <tbody>
         {data.map((row, rowIndex) => (
           <tr key={rowIndex}>
             {columns.map((col) => (
               <td
-                key={String(col.accessor)}
+                key={col.accessor}
                 style={{
                   border: `1px solid ${theme.tableBorder}`,
                   padding: "8px",

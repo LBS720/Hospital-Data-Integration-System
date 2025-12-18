@@ -3,7 +3,6 @@
 import { Router } from "express";
 import { getPatientsWithoutRecentLabTests } from "../db/queries.ts/patientMonitoringQueries";
 import {
-  DBPatientMonitoring,
   PatientMonitoring,
 } from "../models/patientMonitoring";
 import { mapDbPatientMonitoringToPatientMonitoring } from "../utils/mapper/patientMonitoringMapper";
