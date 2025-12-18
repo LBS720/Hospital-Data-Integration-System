@@ -45,6 +45,8 @@ export const columnsMap = {
   [SidebarOption.Monitoring]: [
     { header: "Patient ID", accessor: "patientId" },
     { header: "Case Number", accessor: "hospitalizationCaseNumber" },
+    { header: "First Name", accessor: "firstName" },
+    { header: "Last Name", accessor: "lastName" },
     { header: "Admission Date", accessor: "admissionDate" },
     { header: "Admission Time", accessor: "admissionTime" },
     { header: "Department", accessor: "department" },

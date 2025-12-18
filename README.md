@@ -49,3 +49,9 @@ docker exec -it hospital-postgres psql -U admin -d hospital_db
 ```bash
 \df+ get_patients_without_recent_lab_tests
 ```
+
+# To run local backend:
+
+```bash
+npx ts-node index.ts
+```
