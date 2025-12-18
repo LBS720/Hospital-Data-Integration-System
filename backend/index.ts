@@ -3,11 +3,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import patientsRoutes from "./routes/patients";
-import admissionsRoutes from "./routes/admissions";
-import labTestsRoutes from "./routes/labTests";
-import labResultsRoutes from "./routes/labResults";
-import patientMonitoringRoutes from "./routes/patientMonitoring";
+import patientsRoutes from "./routes/patientsRouter";
+import admissionsRoutes from "./routes/admissionsRouter";
+import labTestsRoutes from "./routes/labTestsRouter";
+import labResultsRoutes from "./routes/labResultsRouter";
+import patientMonitoringRoutes from "./routes/patientMonitoringRouter";
 
 dotenv.config();
 const app = express();
@@ -17,9 +17,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/patients", patientsRoutes);
-app.use("/lab_tests", labTestsRoutes);
+app.use("/lab-tests", labTestsRoutes);
 app.use("/admissions", admissionsRoutes);
-app.use("/lab_results", labResultsRoutes);
+app.use("/lab-results", labResultsRoutes);
 app.use("/monitoring", patientMonitoringRoutes);
 
 app.get("/", (req, res) => res.send("Backend is running!"));
